@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="../jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../moment/min/moment-with-locales.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="build/css/bootstrap-datetimepicker.min.css">
+    <script type="text/javascript" src="build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="../bootstrap/js/html5shiv.min.js"></script>
+        <script type="text/javascript" src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class='col-md-2 col-md-offset-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function()
+            {
+                $('#datetimepicker1').datetimepicker(
+                {
+                    //defaultDate: moment(),
+                    locale: 'pt-bt',
+                    stepping: 30,
+                    format: 'h:mm'
+                });
+            });
+        </script>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="col-sm-6" style="height:130px;">
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker10'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar">
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker10').datetimepicker(
+            {
+                format: 'DD/MM/YYYY',
+                locale: 'pt-br',
+            });
+        });
+    </script>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ans.gov.br/padroes/tiss/schemas http://www.ans.gov.br/padroes/tiss/schemas/tissV3_03_01.xsd">
+    <ans:cabecalho>
+        <ans:identificacaoTransacao>
+            <ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao>
+            <ans:sequencialTransacao>1</ans:sequencialTransacao>
+            <ans:dataRegistroTransacao>2017-04-19</ans:dataRegistroTransacao>
+            <ans:horaRegistroTransacao>19:45:00</ans:horaRegistroTransacao>
+        </ans:identificacaoTransacao>
+        <ans:origem>
+            <ans:identificacaoPrestador>
+            
+                <ans:codigoPrestadorNaOperadora>123</ans:codigoPrestadorNaOperadora>
+            
+            </ans:identificacaoPrestador>
+        </ans:origem>
+        <ans:destino>
+            <ans:registroANS>320706</ans:registroANS>
+        </ans:destino>
+        <ans:Padrao>3.03.01</ans:Padrao>
+    </ans:cabecalho>
+    <ans:prestadorParaOperadora>
+        <ans:loteGuias>
+            <ans:numeroLote>1</ans:numeroLote>
+            <ans:guiasTISS>
+                <ans:guiaConsulta>
+    <ans:cabecalhoConsulta>
+        <ans:registroANS>320706</ans:registroANS>
+        <ans:numeroGuiaPrestador>1</ans:numeroGuiaPrestador>
+    </ans:cabecalhoConsulta>
+    
+        <ans:numeroGuiaOperadora>1</ans:numeroGuiaOperadora>
+    
+    <ans:dadosBeneficiario>
+        <ans:numeroCarteira>123</ans:numeroCarteira>
+        <ans:atendimentoRN>N</ans:atendimentoRN>
+        <ans:nomeBeneficiario>João Paulo</ans:nomeBeneficiario>
+        <ans:numeroCNS>123</ans:numeroCNS>
+        
+    </ans:dadosBeneficiario>
+    <ans:contratadoExecutante>
+        
+            
+                <ans:cpfContratado>111111111111</ans:cpfContratado>
+            
+        
+        <ans:nomeContratado>Erivelton</ans:nomeContratado>
+        <ans:CNES>123</ans:CNES>
+    </ans:contratadoExecutante>
+    <ans:profissionalExecutante>
+        
+            <ans:nomeProfissional>ERIVELTON</ans:nomeProfissional>
+        
+        <ans:conselhoProfissional>06</ans:conselhoProfissional>
+        <ans:numeroConselhoProfissional>333666</ans:numeroConselhoProfissional>
+        <ans:UF>32</ans:UF>
+        <ans:CBOS>225124</ans:CBOS>
+    </ans:profissionalExecutante>
+    <ans:indicacaoAcidente>9</ans:indicacaoAcidente>
+    <ans:dadosAtendimento>
+        <ans:dataAtendimento>2017-04-19</ans:dataAtendimento>
+        <ans:tipoConsulta>1</ans:tipoConsulta>
+        <ans:procedimento>
+            <ans:codigoTabela>22</ans:codigoTabela>
+            <ans:codigoProcedimento>10101012</ans:codigoProcedimento>
+            <ans:valorProcedimento>150.00</ans:valorProcedimento>
+        </ans:procedimento>
+    </ans:dadosAtendimento>
+    
+    
+</ans:guiaConsulta>
+
+            
+            </ans:guiasTISS>
+        </ans:loteGuias>
+    </ans:prestadorParaOperadora>
+    <ans:epilogo>
+        <ans:hash>cdf272d747af10b9c20b5510e5dd9b72</ans:hash>
+    </ans:epilogo>
+</ans:mensagemTISS>

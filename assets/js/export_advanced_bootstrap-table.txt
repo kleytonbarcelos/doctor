@@ -1,0 +1,18 @@
+				<div class="keep-open btn-group" title="Colunas">
+					<button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-download"></i></button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'json',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/json.png" width="16px"> JSON</a></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'xml',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/xml.png" width="16px"> XML</a></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'sql'});"><img src="<?=base_url()?>assets/img/icones/pdf.png" width="16px"> SQL</a></li>
+						<li class="divider"></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'csv',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/csv.png" width="16px"> CSV</a></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'txt',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/txt.png" width="16px"> TXT</a></li>
+						<li class="divider"></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'excel',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/xls.png" width="16px"> XLS</a></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'doc',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/word.png" width="16px"> Word</a></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'powerpoint',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/ppt.png" width="16px"> PowerPoint</a></li>
+						<li class="divider"></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'png',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/png.png" width="16px"> PNG</a></li>
+						<li><a href="#" onclick="$('.bootstrap-table').tableExport({type:'pdf',pdfFontSize:'7',escape:'true',ignoreColumn: [1]});"><img src="<?=base_url()?>assets/img/icones/pdf.png" width="16px"> PDF</a></li>
+					</ul>
+				</div>

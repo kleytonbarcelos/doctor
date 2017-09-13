@@ -1,0 +1,7 @@
+$(function()
+{
+	$('.fileinput').fileinput(
+	{
+
+	});
+})

@@ -1,0 +1,2 @@
+Lista pacientes para USUARIO ATUAL.
+Permissão para somente o médico INICIAR O ATENDIMENTO.

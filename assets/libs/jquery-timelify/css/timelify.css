@@ -1,0 +1,169 @@
+@import url(animate.css);
+* {
+  box-sizing: border-box; }
+
+.timelify {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  margin-top: 40px; }
+  .timelify hr {
+    margin: 0 0 20px 0; }
+  .timelify::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0 auto;
+    height: 100%;
+    width: 4px;
+    background-color: #5b5555; }
+  .timelify h2 {
+    margin: 0 auto;
+    width: 130px;
+    color: white;
+    background: #5b5555;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    z-index: 2; }
+  .timelify h3 {
+    color: inherit;
+    font-weight: 300; }
+  .timelify .timelify-items {
+    list-style-type: none;
+    overflow: hidden;
+    padding-top: 110px;
+    padding-left: 0; }
+    .timelify .timelify-items .timelify-item {
+      position: relative;
+      margin-bottom: 100px;
+      left: -10px;
+      padding: 20px;
+      background-color: white;
+      width: 45%; }
+      .timelify .timelify-items .timelify-item h3 {
+        font-weight: 700; }
+      .timelify .timelify-items .timelify-item.is-hidden {
+        visibility: hidden; }
+      .timelify .timelify-items .timelify-item a {
+        font-weight: 700; }
+      .timelify .timelify-items .timelify-item time::before {
+        font-family: FontAwesome, sans-serif;
+        content: '\f017';
+        margin-right: 10px; }
+      .timelify .timelify-items .timelify-item::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -1em;
+        top: 0; }
+      .timelify .timelify-items .timelify-item::after {
+        content: '';
+        background: #5b5555;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: -15px;
+        border-radius: 100%;
+        left: calc(100% + 10.4%); }
+      .timelify .timelify-items .timelify-item:nth-of-type(2n+1) {
+        background-color: #00acc1;
+        color: white; }
+        .timelify .timelify-items .timelify-item:nth-of-type(2n+1) hr {
+          border-top: 1px solid #00c3db; }
+        .timelify .timelify-items .timelify-item:nth-of-type(2n+1) a {
+          color: #1759a2; }
+        .timelify .timelify-items .timelify-item:nth-of-type(2n+1)::before {
+          border-top: 1em solid #00acc1;
+          border-right: 1em solid transparent; }
+      .timelify .timelify-items .timelify-item:nth-of-type(2n) {
+        background-color: #e57373;
+        color: white; }
+        .timelify .timelify-items .timelify-item:nth-of-type(2n) hr {
+          border-top: 1px solid #e98989; }
+        .timelify .timelify-items .timelify-item:nth-of-type(2n) a {
+          color: #601010; }
+        .timelify .timelify-items .timelify-item:nth-of-type(2n)::before {
+          border-top: 1em solid #e57373;
+          border-right: 1em solid transparent; }
+      .timelify .timelify-items .timelify-item.inverted {
+        position: relative;
+        left: 54%;
+        text-align: right; }
+        .timelify .timelify-items .timelify-item.inverted::before {
+          content: '';
+          width: 0;
+          height: 0;
+          position: absolute;
+          left: -1em;
+          top: 0; }
+        .timelify .timelify-items .timelify-item.inverted::after {
+          content: '';
+          background: #5b5555;
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: -15px;
+          border-radius: 100%;
+          left: calc(-8.78% - 13px); }
+        .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n+1) {
+          background-color: #00acc1;
+          color: white; }
+          .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n+1) hr {
+            border-top: 1px solid #00c3db; }
+          .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n+1) a {
+            color: #1759a2; }
+          .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n+1)::before {
+            border-top: 1em solid #00acc1;
+            border-left: 1em solid transparent; }
+        .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n) {
+          background-color: #e57373;
+          color: white; }
+          .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n) hr {
+            border-top: 1px solid #e98989; }
+          .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n) a {
+            color: #601010; }
+          .timelify .timelify-items .timelify-item.inverted:nth-of-type(2n)::before {
+            border-top: 1em solid #e57373;
+            border-left: 1em solid transparent; }
+      .timelify .timelify-items .timelify-item.centered {
+        position: relative;
+        text-align: justify;
+        width: 100%; }
+        .timelify .timelify-items .timelify-item.centered::before {
+          content: '';
+          width: 0;
+          height: 0;
+          position: absolute;
+          left: calc(50% - 4px);
+          top: -12px; }
+        .timelify .timelify-items .timelify-item.centered::after {
+          display: none; }
+        .timelify .timelify-items .timelify-item.centered:nth-of-type(2n+1) {
+          background-color: #00acc1;
+          color: white; }
+          .timelify .timelify-items .timelify-item.centered:nth-of-type(2n+1) hr {
+            border-top: 1px solid #00c3db; }
+          .timelify .timelify-items .timelify-item.centered:nth-of-type(2n+1) a {
+            color: #1759a2; }
+          .timelify .timelify-items .timelify-item.centered:nth-of-type(2n+1)::before {
+            border-top: 0;
+            border-left: 1em solid transparent;
+            border-right: 1em solid transparent;
+            border-bottom: 1em solid #00acc1; }
+        .timelify .timelify-items .timelify-item.centered:nth-of-type(2n) {
+          background-color: #e57373;
+          color: white; }
+          .timelify .timelify-items .timelify-item.centered:nth-of-type(2n) hr {
+            border-top: 1px solid #e98989; }
+          .timelify .timelify-items .timelify-item.centered:nth-of-type(2n) a {
+            color: #601010; }
+          .timelify .timelify-items .timelify-item.centered:nth-of-type(2n)::before {
+            border-top: 0;
+            border-left: 1em solid transparent;
+            border-right: 1em solid transparent;
+            border-bottom: 1em solid #e57373; }
+
+/*# sourceMappingURL=timelify.css.map */

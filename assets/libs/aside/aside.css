@@ -1,0 +1,112 @@
+	.aside
+	{
+		min-width: 50%;
+		width: 15%;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #fff;
+		font-family: Helvetica, Arial, sans-serif;
+		/*border-left: 1px solid #ccc;*/
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+		z-index: 2000;
+		width: 0px;
+		min-width: 0px;
+		overflow: hidden;
+		transition: 0.35s width ease, 0.35s min-width ease;
+	}
+	.aside .aside-header
+	{
+		background-color: #3498DB;
+		padding: 20px;
+		border-bottom: 3px solid #2980B9;
+		font-size: 20px;
+		color: #fff;
+	}
+	.aside .aside-header .title
+	{
+		margin-right: 30px;
+	}
+	.aside .aside-header .btn_close
+	{
+		cursor: pointer;
+		position: absolute;
+		top: 10px;
+		right: 25px;
+		font-size: 30px;
+	}
+	.aside .aside-contents
+	{
+		/*padding: 0.5em;
+		padding-bottom: 1em;*/
+		padding: 20px;
+	}
+	.aside.in
+	{
+		width: 15%;
+		min-width: 50%;
+	}
+	.aside-backdrop {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1040;
+		background-color: #000;
+		transition: 0.2s opacity ease;
+		opacity: 0;
+		display: none;
+	}
+	.aside-backdrop.in
+	{
+		display: block;
+		opacity: 0.5;
+	}
+	.aside-toggle-right
+	{
+		display: none;
+
+		background-color: #000;
+		color:#fff;
+		position: absolute;
+		top: 0;
+		left: -10px;
+		z-index: 100000000;
+		height: 40px;
+		width: 20px;
+		cursor: pointer;
+		/*border-top: 1px solid #ddd;
+		border-left: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;*/
+		text-align: center;
+		padding-top: 3px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+	.aside-toggle-right:hover
+	{
+		color: #ccc;
+/*		background: #ebebeb;
+		background: -moz-linear-gradient(left, #ebebeb 0%, #ffffff 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(100%, #ffffff));
+		background: -webkit-linear-gradient(left, #ebebeb 0%, #ffffff 100%);
+		background: -o-linear-gradient(left, #ebebeb 0%, #ffffff 100%);
+		background: -ms-linear-gradient(left, #ebebeb 0%, #ffffff 100%);
+		background: linear-gradient(to right, #ebebeb 0%, #ffffff 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=1 );*/
+	}
+	@media only screen and (max-width: 768px)
+	{
+		.aside.in
+		{
+			width: auto;
+		}
+	}
+	@media only screen and (max-width: 992px)
+	{
+
+	}

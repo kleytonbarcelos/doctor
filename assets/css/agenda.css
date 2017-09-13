@@ -1,0 +1,171 @@
+#calendar
+{
+	max-width: 100%;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	border-radius: 6px;
+	box-shadow: 0 1px 2px #C3C3C3;
+}
+.fc-nonbusiness
+{
+	color: #000 !important;
+	background-image: linear-gradient(-45deg, #f5f5f5 25%, transparent 25%, transparent 50%, #f5f5f5  50%, #f5f5f5  75%, transparent 75%, transparent);
+	background-size: 15px 15px;
+	background-color: #ddd;
+}
+.fc-today /* COR DE FUNDO DIA ATUAL (HOJE) */
+{
+	background-color: #fffff0 !important;
+}
+.nome-da-semana /*NOME DO DIA DA SEMANA CABEÇALHO AGENDA*/
+{
+	margin-top: 0px;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	text-align: center;
+	font-size: 13px;
+	color: #666;
+}
+.dia-da-semana /* DIAS DA SEMANA CABEÇALHO AGENDA*/
+{
+	margin: 2px 0px 10px 0px;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	text-align: center;
+	font-size: 10px;
+	color: #999;
+}
+.fc .fc-axis /* HORAS CABEÇALHO AGENDA*/
+{
+	/*padding: -10px 10px 7px 50px;*/
+	padding-left: 30px;
+	padding-right: 10px;
+
+	height: 40px !important;
+
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	text-align: center;
+	font-size: 12px;
+	color: #999;
+	font-weight: bold;
+	border: 0 !important;
+}
+.fc-toolbar
+{
+	border-bottom: 1px solid #ddd;
+	padding: 20px;
+}
+/*#####################################################################*/
+.fc-widget-header:first-of-type
+{
+	border-color: transparent;
+	background-color: transparent;
+}
+.fc th
+{
+  border: 0;
+  background-color: transparent;
+}
+/*##############################################################################*/
+/*##############################################################################*/
+/*##############################################################################*/
+.event-consulta
+{
+	text-align: left;
+	background-color: #E5F3FF;
+	border-color: #8CCCFF;
+}
+.event-consulta .fc-time
+{
+	color: #6FAFE1;
+	font-size: 10px !important;
+	padding-left: 8px;
+}
+.event-consulta .fc-title
+{
+	color: #6FAFE1;
+	font-size: 13px !important;
+	font-weight: bold;
+	padding-left: 8px;
+}
+.event-retorno
+{
+	text-align: left;
+	background-color: #FFB94B;
+	border-color: #EA9612;
+}
+.event-retorno .fc-time
+{
+	color: #333;
+	font-size: 10px !important;
+	padding-left: 8px;
+}
+.event-retorno .fc-title
+{
+	color: #333;
+	font-size: 13px !important;
+	font-weight: bold;
+	padding-left: 8px;
+}
+.event-bloqueado
+{
+	text-align: left;
+	background-color: #999;
+	border-color: #666;
+	background-image: linear-gradient(-45deg, #f5f5f5 25%, transparent 25%, transparent 50%, #f5f5f5  50%, #f5f5f5  75%, transparent 75%, transparent);
+	background-size: 12px 12px;
+}
+.event-bloqueado .fc-time
+{
+	color: #333;
+	font-size: 13px !important;
+	padding-left: 8px;
+}
+.event-bloqueado .fc-title
+{
+	color: #333;
+	font-size: 13px !important;
+	font-weight: bold;
+	padding-left: 8px;
+}
+/*###################################################################################*/
+.status_event_agendado
+{
+	color:#666;
+	background-color:#fff;
+	text-align: left;
+	width: 200px;
+	font-weight: bold;
+}
+.status_event_confirmado
+{
+/*	color:#2095D3;
+	background-color:#fff;*/
+	color:#17900A;
+	background-color:#fff;
+	text-align: left;
+	width: 200px;
+	font-weight: bold;
+}
+.status_event_aguardando_atendimento
+{
+	color:#FFB342;
+	background-color:#fff;
+	text-align: left;
+	width: 200px;
+	font-weight: bold;
+}
+.status_event_nao_compareceu
+{
+	color:#E70101;
+	background-color:#fff;
+	text-align: left;
+	width: 200px;
+	font-weight: bold;
+}
+.status_event_paciente_atendido
+{
+	color:#17900A;
+	background-color:#fff;
+	text-align: left;
+	width: 200px;
+	font-weight: bold;
+}
