@@ -1,10 +1,6 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	function query_to_row($array_multi_row=array())
-	{
-		return array_to_row($array_multi_row);
-	}
 	function array_to_row($array_multi_row=array())
 	{
 		return ( array_key_exists(0, $array_multi_row) ) ? $array_multi_row[0]: $array_multi_row;
@@ -60,26 +56,6 @@
 	{
 		return number_format($str, 2, ',', '.');
 	}
-	function getArrayDiff($a1, $a2)
-	{
-		$result = array();
-		// If First Array is Bigger than Second
-		if( count($a1) > count($a2) )
-		{
-			$result=array_diff($a1,$a2);
-		}
-		// If Second Array is Bigger than First
-		if( count($a1) < count($a2) )
-		{
-			$result=array_diff($a2,$a1);
-		}
-		// If Both array are same but, data values are different.
-		else
-		{
-			$result = array_merge (array_diff($a2,$a1), array_diff($a1,$a2));   
-		}
-		return $result;
-	}
 	function get_array_diff($a1, $a2)
 	{
 		$result = array();
@@ -100,33 +76,3 @@
 		}
 		return $result;
 	}
-
-
-
-
-if(!function_exists('controller'))
-{
-    function controller($name)
-    {
-        $filename = realpath(__dir__ . '/../controllers/'.$name.'.php');
-
-        if(file_exists($filename))
-        {
-            require_once $filename;
-
-            $class = ucfirst($name);
-
-            if(class_exists($class))
-            {
-                $ci =& get_instance();
-
-                if(!isset($ci->{$name.'_controller'}))
-                {
-                    $ci->{$name.'_controller'} = new $class();
-                }
-            }
-        }
-    }
-}
-/* End of file converter_helper.php */
-/* Location: ./application/helpers/converter_helper.php */
