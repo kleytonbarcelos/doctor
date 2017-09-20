@@ -37,7 +37,7 @@
 	}
 	function br_to_decimal($str)
 	{
-		$str = str_replace('$', '', str_replace('R$', '', $str)); // remove $ ou R$
+		$str = str_replace('R$', '', str_replace('$', '', $str)); // remove $ ou R$
 
 		if( preg_match('/,/', $str) && preg_match('/./', $str) ) // us
 		{
@@ -55,6 +55,12 @@
 	function decimal_to_br($str)
 	{
 		return number_format($str, 2, ',', '.');
+	}
+	function rand_keys($len=8, $type=true)
+	{
+		$letters = 'abcefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+		$str = substr(str_shuffle($letters), 0, $len);
+		return ($type==true) ? $str : strtolower($str);
 	}
 	function get_array_diff($a1, $a2)
 	{

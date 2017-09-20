@@ -8,6 +8,10 @@ class Usuarios extends MY_Controller
 		parent::__construct();
 		$this->load->model('usuario_model');
 	}
+	public function cadastro()
+	{
+		$this->load->view('usuarios/cadastro');
+	}
 	public function index()
 	{
 		$this->template->load('adminlte/index', 'usuarios/index');

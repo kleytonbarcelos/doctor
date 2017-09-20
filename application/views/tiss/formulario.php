@@ -8,6 +8,7 @@
 	16 - CBO (profissão do médico
 	21 - Código do procedimento
 -->
+
 <?php
 	$titulo_formulario = ( $this->router->fetch_method() == 'cadastrar' ) ? '<strong><i class="fa fa-plus-square"></i>&nbsp;Guia de consulta</strong><span class="pull-right">v. 3.03.01</span>' : '<strong><i class="glyphicon glyphicon-edit"></i>&nbsp;Guia de consulta</strong><span class="pull-right">v. 3.03.01</span>';
 ?>

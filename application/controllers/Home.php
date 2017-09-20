@@ -17,17 +17,18 @@
 		{
 			for($i=0; $i<6; $i++)
 			{
-				sleep(1);
-				$rand = rand(1,60);
-				echo '&nbsp;&nbsp;-&nbsp;&nbsp;'.$rand;
+				$tmp[] = rand(1,60);
+			}
+			sort($tmp);
+			foreach ($tmp as $key => $value)
+			{
+				$str = ($key==0) ? $value : '&nbsp;&nbsp;-&nbsp;&nbsp;'.$value;
+				
+				echo $str;
 			}
 		}
 		public function ans()
 		{
 			$this->template->load('AdminLTE/index', 'home/ans');
-		}
-		public function jspdf()
-		{
-			$this->template->load('AdminLTE/index', 'home/old/jspdf');
 		}
 	}

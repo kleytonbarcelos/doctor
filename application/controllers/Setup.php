@@ -9,8 +9,7 @@
 		}
 		public function index()
 		{
-			//$this->template->load('AdminLTE/index', 'home/home');
-			$this->load->view('setup/index');
+			$this->load->view('usuarios/setup');
 		}
 		public function salvar()
 		{
