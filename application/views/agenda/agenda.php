@@ -172,6 +172,7 @@
 				return false;
 			}
 			$('#CadastraEvento').modal('show');
+			$('#CadastraEvento').find('#event_id').val('');
 			$('#CadastraEvento').find('#txtStart').val(start.format());
 			$('#CadastraEvento').find('#txtEnd').val(end.format());
 		},

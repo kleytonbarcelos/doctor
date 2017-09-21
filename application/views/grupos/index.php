@@ -1,3 +1,5 @@
+<h3><i class="fa fa-users"></i> Grupos</h3>
+<hr>
 <div class="msg"></div>
 <div id="toolbar">
 	<button class="btn btn-sm btn-primary" onclick="window.location.href=base_url_controller+'cadastrar';"><i class="fa fa-plus"></i> Cadastrar</button>
@@ -101,9 +103,9 @@
 	function formatter_actions(value, row, index)
 	{
 		return ''+
-			'<a title="Ver Grupo" data-toggle="tooltip" class="btn btn-default btn-xs" href="'+base_url_controller+'visualizar/'+$.md5(row.id)+'"><i class="fa fa-vcard"></i></a>'+
+			'<a title="Visualizar" data-toggle="tooltip" class="btn btn-default btn-xs" href="'+base_url_controller+'visualizar/'+$.md5(row.id)+'"><i class="fa fa-vcard"></i></a>'+
 			'&nbsp;'+
-			'<a title="Editar Grupo" data-toggle="tooltip" class="btn btn-default btn-xs" href="'+base_url_controller+'editar/'+$.md5(row.id)+'"><i class="fa fa-pencil"></i></a>'+
+			'<a title="Editar" data-toggle="tooltip" class="btn btn-default btn-xs" href="'+base_url_controller+'editar/'+$.md5(row.id)+'"><i class="fa fa-pencil"></i></a>'+
 		'';
 	}
 	function formatter_date_to_br(value, row)
