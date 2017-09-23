@@ -684,12 +684,12 @@
 											var html = '<option value=""></option>';
 											$.ajax(
 											{
-												url: base_url+'pacientes/pacientes',
+												url: base_url+'pacientes/get',
 												type: 'POST',
 												dataType: 'json',
 												success: function(data)
 												{
-													$.each(data.pacientes, function(index, paciente)
+													$.each(data.dados, function(index, paciente)
 													{
 														html += '<option value="'+paciente.id+'">'+paciente.nome+'</option>';
 													});

@@ -44,12 +44,44 @@
 		}
 		public function salvar()
 		{
-			$this->form_validation->set_rules('txtNome', strong('Nome'), 'trim|required');
+			$this->form_validation->set_rules('txtNome', strong('Nome'), 'required');
+			$this->form_validation->set_rules('txtDataNascimento', strong('Data nascimento'), 'required');
+			$this->form_validation->set_rules('txtSexo', strong('Sexo'), 'required');
+			$this->form_validation->set_rules('txtCelular', strong('Celular'), 'required');
 
 			if( $this->form_validation->run() == true )
 			{
 				$data = array(
-					'nome'=>$this->input->post('txtNome'),
+						'nome'=>$this->input->post('txtNome'),
+						'datanascimento'=>$this->input->post('txtDataNascimento'),
+						'sexo'=>$this->input->post('txtSexo'),
+						'email'=>$this->input->post('txtEmail'),
+						'cpf'=>$this->input->post('txtCpf'),
+						'rg'=>$this->input->post('txtRg'),
+						'celular'=>$this->input->post('txtCelular'),
+						'telefone'=>$this->input->post('txtTelefone'),
+						'telefonetrabalho'=>$this->input->post('txtTelefoneTrabalho'),
+						'sms'=>$this->input->post('txtSms'),
+						'cep'=>$this->input->post('txtCep'),
+						'endereco'=>$this->input->post('txtEndereco'),
+						'numero'=>$this->input->post('txtNumero'),
+						'complemento'=>$this->input->post('txtComplemento'),
+						'bairro'=>$this->input->post('txtBairro'),
+						'cidade'=>$this->input->post('txtCidade'),
+						'uf'=>$this->input->post('txtUf'),
+						'naturalidade'=>$this->input->post('txtNaturalidade'),
+						'ufnaturalidade'=>$this->input->post('txtUfNaturalidade'),
+						'estadocivil'=>$this->input->post('txtEstadoCivil'),
+						'religiao'=>$this->input->post('txtReligiao'),
+						'profissao'=>$this->input->post('txtProfissao'),
+						'escolaridade'=>$this->input->post('txtEscolaridade'),
+						'cns'=>$this->input->post('txtCns'),
+						'obs'=>$this->input->post('txtObs'),
+						'convenio'=>$this->input->post('txtConvenio'),
+						'planoconvenio'=>$this->input->post('txtPlanoConvenio'),
+						'carteiraconvenio'=>$this->input->post('txtCarteiraConvenio'),
+						'validadeconvenio'=>$this->input->post('txtValidadeConvenio'),
+						'acomodacaoconvenio'=>$this->input->post('txtAcomodacaoConvenio'),
 				);
 
 				if(!$this->input->post('id'))
@@ -106,11 +138,11 @@
 		{
 			if( $this->input->post('id') )
 			{
-				$data['paciente'] = $this->paciente_model->select('id, nome')->get($this->input->post('id'));
+				$data['paciente'] = $this->paciente_model->select('id, nome, sexo, celular, telefone, email')->get($this->input->post('id'));
 			}
 			else
 			{
-				$data['dados'] = $this->paciente_model->select('id, nome')->get();
+				$data['dados'] = $this->paciente_model->select('id, nome, sexo, celular, telefone, email')->get($this->input->post('id'));
 			}
 			echo json_encode($data);
 		}
@@ -124,10 +156,20 @@
 			$data['inputs'] = $data_temp;
 			echo json_encode($data);
 		}
-		public function typeahead()
+		public function typeahead($id=null)
 		{
-			$data['Pacientes'] = $this->paciente_model->like( array('nome'=>$this->input->post('query')) )->get();
-			$data['status'] = ($data['Pacientes']) ? 1 : 0;
+			if($id)
+			{
+				$data['dados'] = $this->paciente_model->get($id);
+			}
+			else
+			{
+				$search = array(
+					'nome'=>$this->input->post('query'),
+				);
+				$data['dados'] = $this->paciente_model->like($search)->get();
+			}
+			$data['status'] = ($data['dados']) ? 1 : 0;
 			echo json_encode($data);
 		}
 		public function bootstrap_table()
