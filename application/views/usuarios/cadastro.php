@@ -22,7 +22,7 @@
 
 	<script src="<?=base_url()?>assets/libs/bootstrap/js/bootstrap.min.js"></script>
 	<link type="text/css" rel="stylesheet" href="<?=base_url()?>assets/libs/font-awesome/css/font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="<?=base_url()?>assets/css/css.css">
+	<link type="text/css" rel="stylesheet" href="<?=base_url()?>assets/css/style.css">
 
 
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/libs/select2/dist/css/select2.min.css">
@@ -31,18 +31,22 @@
 	<script src="<?=base_url()?>assets/libs/select2/config.js"></script>
 
 
-	<script type="text/javascript" src="<?=base_url()?>assets/libs/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>		<!-- JQUERY INPUTMASK (JS) -->
-	<script type="text/javascript" src="<?=base_url()?>assets/libs/jquery.inputmask/config.js"></script>		<!-- JQUERY INPUTMASK CONFIG (JS) -->
+	<script type="text/javascript" src="<?=base_url()?>assets/libs/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+	<script type="text/javascript" src="<?=base_url()?>assets/libs/jquery.inputmask/config.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/libs/alertifyjs/css/alertify.min.css">										<!-- ALERTIFY (CSS) -->
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/libs/alertifyjs/css/themes/default.min.css">									<!-- ALERTIFY (CSS) -->
-	<script type="text/javascript" src="<?=base_url()?>assets/libs/alertifyjs/alertify.min.js"></script>											<!-- ALERTIFY (JS) -->
-	<script type="text/javascript" src="<?=base_url()?>assets/libs/alertifyjs/config.js"></script>													<!-- ALERTIFY (CONFIG) -->
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/libs/jquery-toast-plugin/dist/jquery.toast.min.css">
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/libs/jquery-toast-plugin/config.css">
+	<script type="text/javascript" src="<?=base_url()?>assets/libs/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+
+	<script type="text/javascript" src="<?=base_url()?>assets/libs/jquery.md5/jquery.md5.js"></script>
+	
+
+	<script type="text/javascript" src="<?=base_url()?>assets/js/script.js"></script>
 
 	<style type="text/css">
 		body
 		{
-			background-color: #333F4F;
+			background-color: #f9f9f9;
 		}
 	</style>
 
@@ -51,16 +55,15 @@
 		var base_url_controller = '<?=base_url().$this->router->fetch_class()?>/';
 		var controller = '<?=$this->router->fetch_class()?>';
 	</script>
-	</head>
+</head>
 <body>
 	<br><br><br><br>
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-3 col-md-offset-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
 						<img src="<?=base_url()?>assets/img/logo.png">
-						<div class="pull-right font-18 color-999">Configurações iniciais</div>
 					</h3>
 				</div>
 				<div class="panel-body">
@@ -71,21 +74,12 @@
 							{
 								if(data.status == 1)
 								{
-									if(data.action=='insert')
+									$('#formCadastro').hide();
+									$('.msg').html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>'+data.msg+'</div>');
+									setTimeout(function()
 									{
-										window.location.href=base_url_controller;
-									}
-									else
-									{
-										$.toast(
-										{
-											text: data.msg,
-											icon: 'success',
-											position: 'top-right',
-											//hideAfter: 10000,
-											loader: false,
-										});
-									}
+										window.location.href=base_url+'usuarios/setup/'+$.md5(data.usuario_id);
+									}, 5000);
 								}
 								else
 								{
@@ -95,22 +89,17 @@
 							});
 						});
 					</script>
-					<?=form_open_multipart('usuarios/cadastro', array('id'=>'formCadastro', 'class'=>'formajax', 'role'=>'form', 'data-callback'=>'true'))?>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="msg"></div>
 						</div>
 					</div>
-					<h4>Dados pessoais</h4>
+					<?=form_open_multipart('usuarios/salvarcadastro', array('id'=>'formCadastro', 'class'=>'formajax', 'role'=>'form', 'data-callback'=>'true'))?>
+					<div class="font-16 text-center">Cadastre-se em menos de 1 minuto. <br>Não é necessário fornecer nenhuma informação de pagamento.</div>
 					<hr>
-					<div class="row margin-top-20">
-						<div class="col-md-12 font-11">
-							<label for="txtPronome" class="control-label font-11">COMO DESEJA EXIBIR SEU NOME?</label>
-						</div>
-					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<div class="form-group form-group-sm">
+							<div class="form-group form-group-lg">
 								<label for="txtNome" class="control-label">Nome</label>
 								<input type="text" class="form-control" id="txtNome" name="txtNome" placeholder="Nome" data-field-db="<?=sha1('usuarios.nome')?>">
 								<small class="msg-erro text-danger"></small>
@@ -119,8 +108,26 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
+							<div class="form-group form-group-lg">
+								<label for="txtEmail" class="control-label">E-mail</label>
+								<input type="text" class="form-control" id="txtEmail" name="txtEmail" placeholder="E-mail" data-field-db="<?=sha1('usuarios.email')?>">
+								<small class="msg-erro text-danger"></small>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group form-group-lg">
+								<label for="txtSenha" class="control-label">Senha</label>
+								<input type="password" class="form-control" id="txtSenha" name="txtSenha" placeholder="Senha" data-field-db="<?=sha1('usuarios.senha')?>">
+								<small class="msg-erro text-danger"></small>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
 							<div class="pull-right">
-								<button type="submit" class="btn btn-success"><i class="fa fa-save"></i>&nbsp;Salvar</button>
+								<button type="submit" class="btn btn-success btn-lg"><i class="fa fa-save"></i>&nbsp;Salvar</button>
 							</div>
 						</div>
 					</div>

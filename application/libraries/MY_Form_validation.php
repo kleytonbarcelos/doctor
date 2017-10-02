@@ -37,6 +37,21 @@ class MY_Form_validation extends CI_Form_validation {
 		} 
 		return TRUE;
 	}
+	/**
+	 * [valid_date description]
+	 * @param  [type] $date [description]
+	 * @return [type]       [description]
+	 */
+	public function valid_date($date) {
+		if (preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $date)) {
+			if(checkdate(substr($date, 3, 2), substr($date, 0, 2), substr($date, 6, 4)))
+				return TRUE;
+			else
+				return FALSE;
+		} else {
+			return FALSE;
+		}
+	}
 }
 
 /* End of file MY_Form_validation.php */

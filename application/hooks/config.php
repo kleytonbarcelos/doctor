@@ -40,7 +40,7 @@ class Config
 		//#################################################################################
 		//#################################################################################
 		//#################################################################################
-		$controllers_publics = array('login');
+		$controllers_publics = array('login', 'usuarios');
 		if(!in_array($this->ci()->controller, $controllers_publics))
 		{
 			if( !$this->ci()->session->dados_usuario )

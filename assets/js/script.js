@@ -1,6 +1,20 @@
 //############################################################################################################
 //#################################			FUNCTIONS PACKAGE (Start)			##############################
 //############################################################################################################
+function alert_msg($element='.msg', $msg, $type='danger')
+{
+	// if($tipo=='success'){$icone='fa-check-circle';}
+	// if($tipo=='danger'){$icone='fa-times-circle';}
+	// if($tipo=='warning'){$icone='fa-exclamation-triangle';}
+
+	$html = ''+
+				'<div class="alert alert-'+$type+' alert-dismissible" role="alert">'+
+					'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
+					''+$msg+''+
+				'</div>'+
+			'';
+	$($element).html( $html );
+}
 function str_replace(str, de, para)
 {
 	var pos = str.indexOf(de);
